@@ -1,0 +1,14 @@
+textarea {
+    width: 100%;
+}
+
+.button {
+    padding: .4em .8em;
+    border: 3px solid #ddd;
+}
+
+.btn-primary {
+    background: #E46C0C;
+    color: #fff;
+    border-color: #F29246;
+}

@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  label(for='input') Bookmarklet code
+  textarea#input
+
+  h2 Options
+  ul
+    li
+      input#minify(type='checkbox')
+      label(for='minify') Minify code
+
+  button.button.btn-primary Generate bookmarklet!
+
+  div#output
+    a Output bookmarklet
