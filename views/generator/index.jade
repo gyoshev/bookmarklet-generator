@@ -7,20 +7,21 @@ block content
   h2 Options
   ul
     li
-      input#uglify(type='checkbox')
-      label(for='uglify') Minify code
+      input#should_uglify(type='checkbox',checked)
+      label(for='should_uglify') Minify code
 
   button#bookmarkify.button.btn-primary Generate bookmarklet!
 
   div#output
     a#bookmarklet Output bookmarklet
 
+  script(src='/scripts/uglifyweb.js')
   script(src='/scripts/bookmarkify.js')
   script
     function $(id) { return document.getElementById(id); }
 
     $('bookmarkify').onclick = function () {
         $('bookmarklet').href = bookmarkify($('input').value, {
-            uglify: $('uglify').checked
+            uglify: $('should_uglify').checked
         });
     }
