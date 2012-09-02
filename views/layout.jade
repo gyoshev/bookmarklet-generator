@@ -2,12 +2,13 @@ doctype 5
 html
   head
     title Bookmarklet generator
-    link(rel="stylesheet", href="/stylesheets/style.css")
+    link(rel="stylesheet", href="/bootstrap/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/styles/site.css")
     block head
 
   body
-    h1 Bookmarklet generator
     div#page
+      h1 Bookmarklet generator
       block content
 
     footer
@@ -21,3 +22,5 @@ html
         |  are great. Hosted on 
         a(href='https://console.appfog.com/login') AppFog
         | .
+
+    script(src="/bootstrap/js/bootstrap.min.js")

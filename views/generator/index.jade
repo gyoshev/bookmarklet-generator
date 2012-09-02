@@ -10,16 +10,18 @@ block head
     }
 
 block content
-  label(for='name') Name
+  label(for='name', class='input-large') Name
   input#name
 
   label(for='input') Bookmarklet code
   textarea#input
+    | // Insert awesome here
 
-  input#should_uglify(type='checkbox',checked)
-  label(for='should_uglify') Minify code
+  label(for='should_uglify',class='checkbox')
+    input#should_uglify(type='checkbox',checked)
+    | Minify code
 
-  button#bookmarkify.button.btn-primary Generate bookmarklet!
+  button#bookmarkify.btn.btn-primary Generate
 
   div#output(style='display:none')
     a#bookmarklet Output bookmarklet
