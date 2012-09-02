@@ -1,27 +1,47 @@
 extends ../layout
 
+block head
+  link(rel="stylesheet", href="/codemirror/codemirror.css")
+  style
+    .CodeMirror-scroll {
+        height: auto;
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+
 block content
+  label(for='name') Name
+  input#name
+
   label(for='input') Bookmarklet code
   textarea#input
 
-  h2 Options
-  ul
-    li
-      input#should_uglify(type='checkbox',checked)
-      label(for='should_uglify') Minify code
+  input#should_uglify(type='checkbox',checked)
+  label(for='should_uglify') Minify code
 
   button#bookmarkify.button.btn-primary Generate bookmarklet!
 
-  div#output
+  div#output(style='display:none')
     a#bookmarklet Output bookmarklet
 
+  script(src='/codemirror/codemirror.js')
   script(src='/scripts/uglifyweb.js')
   script(src='/scripts/bookmarkify.js')
   script
     function $(id) { return document.getElementById(id); }
 
+    var editor = CodeMirror.fromTextArea($('input'), {
+      lineNumbers: true
+    });
+
     $('bookmarkify').onclick = function () {
-        $('bookmarklet').href = bookmarkify($('input').value, {
+        var bookmarkletButton = $('bookmarklet');
+
+        bookmarkletButton.href = bookmarkify($('input').value, {
             uglify: $('should_uglify').checked
         });
+
+        bookmarkletButton.innerHTML = $('name').value || "Bookmarklet"
+
+        $('output').style.display = "";
     }

@@ -3,7 +3,19 @@ html
   head
     title Bookmarklet generator
     link(rel="stylesheet", href="/stylesheets/style.css")
+    block head
+
   body
     h1 Bookmarklet generator
     div#page
       block content
+
+    footer
+      p
+        | Created by 
+        a(href='http://blog.gyoshev.net') Alex Gyoshev
+        | . 
+        a(href='https://github.com/jrburke/uglifyweb') UglifyWeb
+        |  and 
+        a(href='http://codemirror.net') CodeMirror
+        |  are great.
