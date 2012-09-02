@@ -1,4 +1,5 @@
-- MVP (generate minified bookmarklet)
 - Apply basic design
 - Add analytics to gather metrics
 - Use codemirror for input textarea
+- Allow saving of bookmarklets
+- Add useful snippets (load external js / css)
